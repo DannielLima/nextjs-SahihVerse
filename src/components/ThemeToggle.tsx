@@ -16,7 +16,7 @@ const ThemeToggle = () => {
       onClick={toggleTheme}
       className="bg-gray-700 text-white px-4 py-2 rounded-md"
     >
-      {theme === 'dark' ? 'Modo Claro' : 'Modo Escuro'}
+      {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
     </button>
   );
 };
