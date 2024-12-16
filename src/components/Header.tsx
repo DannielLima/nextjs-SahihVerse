@@ -1,13 +1,19 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 const Header = () => (
   <header className="bg-gray-800 py-4">
-    <div className="container mx-auto flex justify-between items-center">
+    <div className="container mx-auto px-4 flex justify-between items-center">
       <h1 className="text-2xl font-bold">SahihVerse</h1>
-      <nav>
-        <Link href="/" className="text-white mx-2">Home</Link>
-        <Link href="/chapter" className="text-white mx-2">Chapters</Link>
-        <Link href="/about" className="text-white mx-2">About</Link>
+      <nav className="space-x-4">
+        <Link href="/" className="text-white hover:text-gray-300">
+          Home
+        </Link>
+        <Link href="/quran" className="text-white hover:text-gray-300">
+          Quran
+        </Link>
+        <Link href="/about" className="text-white hover:text-gray-300">
+          About
+        </Link>
       </nav>
     </div>
   </header>
