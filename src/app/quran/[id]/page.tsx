@@ -1,5 +1,7 @@
 import path from "path";
 import fs from "fs";
+import { FC } from "react";
+import Image from "next/image";
 
 interface Verse {
   [key: string]: string;
@@ -19,7 +21,13 @@ interface Translation {
   count: number;
 }
 
-const QuranSurahPage = async ({ params }: { params: { id: string } }) => {
+interface QuranSurahPageProps {
+  params: {
+    id: string;
+  };
+}
+
+const QuranSurahPage: FC<QuranSurahPageProps> = async ({ params }) => {
   const formattedId = String(parseInt(params.id, 10));
 
   const surahPath = path.join(
@@ -39,7 +47,13 @@ const QuranSurahPage = async ({ params }: { params: { id: string } }) => {
   return (
     <div className="min-h-screen text-dark-gray p-6">
       <div className="max-w-4xl mx-auto p-8 bg-light-beige shadow-lg rounded-lg border-4 border-dark-green">
-        <img src="/img/bismillah-img.png" alt="bismillah" />
+        <Image
+          src="/img/bismillah-img.png"
+          alt="bismillah"
+          width={500}
+          height={500}
+          className="rounded-lg max-w-full mx-auto"
+        />
         <h1 className="text-4xl font-serif text-center mb-6 text-dark-gray md:text-5xl">
           {surahData.name}
         </h1>
