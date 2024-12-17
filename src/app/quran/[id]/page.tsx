@@ -1,6 +1,5 @@
 import path from "path";
 import fs from "fs";
-import { FC } from "react";
 import Image from "next/image";
 
 interface Verse {
@@ -21,13 +20,7 @@ interface Translation {
   count: number;
 }
 
-interface QuranSurahPageProps {
-  params: {
-    id: string;
-  };
-}
-
-const QuranSurahPage: FC<QuranSurahPageProps> = async ({ params }) => {
+const QuranSurahPage = async ({ params }: { params: { id: string } }) => {
   const formattedId = String(parseInt(params.id, 10));
 
   const surahPath = path.join(
