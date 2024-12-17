@@ -22,7 +22,7 @@ export default function Home() {
         <div className="w-full md:w-1/2 flex flex-col md:flex-row items-center justify-center md:justify-evenly space-y-8 md:space-y-0">
           <section className="flex flex-col items-center text-center space-y-4">
             <div className="bg-emerald-300 p-4 rounded-full flex items-center justify-center shadow-md">
-              <p className="w-32 h-32 text-white font-serif flex items-center justify-center text-2xl">
+              <p className="w-32 h-32 text-white font-arabic flex items-center justify-center text-2xl">
                 قُرْءَان
               </p>
             </div>
@@ -35,13 +35,15 @@ export default function Home() {
 
           <section className="flex flex-col items-center text-center space-y-4">
             <div className="bg-rose-300 p-4 rounded-full flex items-center justify-center shadow-md">
-              <p className="w-32 h-32 text-white font-serif flex items-center justify-center text-2xl">
+              <p className="w-32 h-32 text-white font-arabic flex items-center justify-center text-2xl">
                 مُحَمَّد
               </p>
             </div>
+            <Link href="/hadith" legacyBehavior>
             <a className="mt-2 px-6 py-3 text-dark-gray font-semibold font-nunito bg-rose-200 rounded-md shadow hover:bg-rose-300 transition">
               Read Hadith
             </a>
+            </Link>
           </section>
         </div>
       </div>

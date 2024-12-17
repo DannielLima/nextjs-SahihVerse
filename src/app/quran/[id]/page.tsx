@@ -37,20 +37,20 @@ const QuranSurahPage = ({ params }: { params: { id: string } }) => {
   );
 
   return (
-    <div className="min-h-screen text-gray-100 p-6">
-      <div className="max-w-4xl mx-auto p-8 bg-[#2d3748] shadow-lg rounded-lg border border-gray-600">
-        <img src="/img/bismillah-img.png" alt="bismillah" className="filter invert" />
-        <h1 className="text-4xl font-serif text-center mb-6 text-gray-100 md:text-5xl">
+    <div className="min-h-screen text-dark-gray p-6">
+      <div className="max-w-4xl mx-auto p-8 bg-light-beige shadow-lg rounded-lg border-4 border-dark-green">
+        <img src="/img/bismillah-img.png" alt="bismillah" />
+        <h1 className="text-4xl font-serif text-center mb-6 text-dark-gray md:text-5xl">
           {surahData.name}
         </h1>
-        <hr className="border-t border-gray-600 my-4" />
+        <hr className="border-t border-dark-green my-4" />
         <ul className="space-y-8">
           {Object.entries(surahData.verse).map(([key, verse]) => (
             <li key={key} className="text-center">
-              <p className="text-3xl font-semibold font-arabic text-gray-100 leading-loose mb-3">
+              <p className="text-3xl font-semibold font-arabic text-dark-gray leading-loose mb-3">
                 {verse}
               </p>
-              <p className="text-lg italic text-gray-300">
+              <p className="text-lg italic font-lato text-dark-gray">
                 {translationData.verse[key]}
               </p>
             </li>

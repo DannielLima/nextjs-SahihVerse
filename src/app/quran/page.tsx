@@ -30,21 +30,21 @@ export default async function Home() {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-4xl font-extrabold mb-6 text-center md:text-5xl">
+      <h1 className="text-4xl font-bold font-serif mb-6 text-center md:text-5xl">
         Quran
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-6 gap-4">
         {surahs.map((surah) => (
           <Link
             href={`/quran/${surah.index}`}
             key={surah.index}
-            className="bg-gray-800 p-4 rounded-lg text-center shadow-md hover:bg-gray-700 transition-all"
+            className="bg-light-beige border-4 border-dark-green p-4 rounded-lg text-center shadow-md hover:bg-pastel-green transition-all"
           >
             <div>
-              <p className="text-xl font-semibold text-gray-200">
+              <p className="text-xl font-semibold text-dark-gray">
                 {surah.title}
               </p>
-              <p className="text-lg text-gray-400">{surah.titleAr}</p>
+              <p className="text-lg text-dark-gray font-serif">{surah.titleAr}</p>
             </div>
           </Link>
         ))}
