@@ -1,5 +1,6 @@
+import { use } from "react";
 import path from "path";
-import fs from "fs";
+import fs from "fs/promises";
 import Image from "next/image";
 
 interface Verse {
@@ -20,8 +21,23 @@ interface Translation {
   count: number;
 }
 
-const QuranSurahPage = async ({ params }: { params: { id: string } }) => {
-  const formattedId = String(parseInt(params.id, 10));
+interface Params {
+  params: Promise<{ id: string }>; // Promessa como parâmetro
+}
+
+// Função para gerar parâmetros dinâmicos
+export async function generateStaticParams() {
+  const surahDir = path.join(process.cwd(), "src/app/quran/source/surah");
+  const surahFiles = await fs.readdir(surahDir);
+
+  return surahFiles.map((file) => ({
+    id: file.match(/\d+/)?.[0] || "1", // Extrai o ID do nome do arquivo
+  }));
+}
+
+// Função assíncrona para obter os dados
+async function getSurahAndTranslation(id: string) {
+  const formattedId = String(parseInt(id, 10));
 
   const surahPath = path.join(
     process.cwd(),
@@ -32,10 +48,21 @@ const QuranSurahPage = async ({ params }: { params: { id: string } }) => {
     `src/app/quran/source/translation/en/en_translation_${formattedId}.json`
   );
 
-  const surahData: Surah = JSON.parse(fs.readFileSync(surahPath, "utf8"));
-  const translationData: Translation = JSON.parse(
-    fs.readFileSync(translationPath, "utf8")
-  );
+  const [surahFile, translationFile] = await Promise.all([
+    fs.readFile(surahPath, "utf8"),
+    fs.readFile(translationPath, "utf8"),
+  ]);
+
+  const surahData: Surah = JSON.parse(surahFile);
+  const translationData: Translation = JSON.parse(translationFile);
+
+  return { surahData, translationData };
+}
+
+// Componente da página
+export default function QuranSurahPage({ params }: Params) {
+  const { id } = use(params); // Aguarda os parâmetros
+  const { surahData, translationData } = use(getSurahAndTranslation(id)); // Aguarda os dados
 
   return (
     <div className="min-h-screen text-dark-gray p-6">
@@ -66,6 +93,4 @@ const QuranSurahPage = async ({ params }: { params: { id: string } }) => {
       </div>
     </div>
   );
-};
-
-export default QuranSurahPage;
+}
