@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -36,9 +37,11 @@ export default function Home() {
           transition={{ duration: 1, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <img
+          <Image
             src="/img/mosque.png"
             alt="Mosque"
+            width={500}
+            height={500}
             className="rounded-lg shadow-lg max-w-full"
           />
         </motion.section>
@@ -105,8 +108,9 @@ export default function Home() {
             Islam is a religion of peace, love, and compassion that inspires
             millions around the world. Rooted in the belief in one God, Allah,
             it teaches kindness, justice, and mercy to all living beings. The
-            word "Islam" itself means submission to God's will, reflecting a way
-            of life that encourages harmony, mutual respect, and understanding.
+            word &quot;Islam&quot; itself means submission to God&apos;s will,
+            reflecting a way of life that encourages harmony, mutual respect,
+            and understanding.
           </motion.p>
           <motion.p
             className="text-lg font-lato leading-relaxed"
@@ -129,9 +133,11 @@ export default function Home() {
           transition={{ duration: 1, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <img
+          <Image
             src="/img/muslim.png"
             alt="Muslim"
+            width={500}
+            height={500}
             className="rounded-lg shadow-lg w-full"
           />
         </motion.section>
