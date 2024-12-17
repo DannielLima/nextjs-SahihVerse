@@ -31,7 +31,7 @@ export default async function Home() {
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-4xl font-extrabold mb-6 text-center md:text-5xl">
-        Chapters of the Quran
+        Quran
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {surahs.map((surah) => (

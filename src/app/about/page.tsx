@@ -2,13 +2,13 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="container mx-auto p-8 bg-gray-900 text-white rounded-xl shadow-lg">
-      <h1 className="text-4xl sm:text-5xl font-extrabold text-center text-white mb-8">
+    <div className="container mx-auto p-8 bg-light-beige text-white rounded-xl shadow-lg">
+      <h1 className="text-4xl sm:text-5xl font-bold font-serif text-center text-dark-gray mb-8">
         About SahihVerse
       </h1>
 
-      <p className="text-lg sm:text-xl text-gray-300 leading-relaxed mb-6">
-        <strong className="font-semibold">SahihVerse</strong> is a web
+      <p className="text-lg sm:text-xl font-normal font-lato text-dark-gray leading-relaxed mb-6">
+        <strong className="font-bold font-lato text-emerald-300">SahihVerse</strong> is a web
         application dedicated to providing an immersive and user-friendly
         experience for exploring Islamic texts. The app focuses on making the
         Quran and Hadiths accessible, with a clean and intuitive interface that
@@ -16,10 +16,10 @@ const About = () => {
         of the names of the Surahs.
       </p>
 
-      <h2 className="text-2xl sm:text-3xl font-semibold text-white mb-4">
+      <h2 className="text-2xl sm:text-3xl font-bold font-serif text-dark-gray mb-4">
         Key Features:
       </h2>
-      <ul className="list-disc pl-6 space-y-4 text-gray-400">
+      <ul className="list-disc pl-6 space-y-4 text-dark-gray">
         <li>
           <strong>Chapters of the Quran:</strong> The app offers easy navigation
           through all the chapters of the Quran, with each Surah displayed in
@@ -48,10 +48,10 @@ const About = () => {
         </li>
       </ul>
 
-      <h2 className="text-2xl sm:text-3xl font-semibold text-white mt-6 mb-4">
+      <h2 className="text-2xl sm:text-3xl font-bold font-serif text-dark-gray mt-6 mb-4">
         Technologies Used:
       </h2>
-      <ul className="list-disc pl-6 space-y-4 text-gray-400">
+      <ul className="list-disc pl-6 space-y-4 text-dark-gray">
         <li>
           <strong>Next.js:</strong> A React-based framework for building fast
           and scalable web applications.
@@ -66,10 +66,10 @@ const About = () => {
         </li>
       </ul>
 
-      <h2 className="text-2xl sm:text-3xl font-semibold text-white mt-6 mb-4">
+      <h2 className="text-2xl sm:text-3xl font-bold font-serif text-dark-gray mt-6 mb-4">
         Project Repository:
       </h2>
-      <p>
+      <p className="text-lg sm:text-xl font-normal font-lato text-dark-gray leading-relaxed mb-6">
         You can access the source code for this project on GitHub:{" "}
         <a
           href="https://github.com/DannielLima/SahihVerse"
