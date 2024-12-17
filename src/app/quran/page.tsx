@@ -33,7 +33,7 @@ export default async function Home() {
       <h1 className="text-4xl font-bold font-serif mb-6 text-center md:text-5xl">
         Quran
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
         {surahs.map((surah) => (
           <Link
             href={`/quran/${surah.index}`}

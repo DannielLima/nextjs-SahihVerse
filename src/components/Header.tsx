@@ -2,13 +2,19 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import "../app/styles/globals.css";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-light-beige py-4">
+    <motion.header
+      className="bg-light-beige py-4"
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+    >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <h1 className="text-2xl font-bold font-serif text-dark-gray">
           SahihVerse
@@ -69,7 +75,7 @@ const Header = () => {
           </Link>
         </nav>
       </div>
-    </header>
+    </motion.header>
   );
 };
 

@@ -1,5 +1,5 @@
-import fs from "fs";
 import path from "path";
+import fs from "fs";
 
 interface Verse {
   [key: string]: string;
@@ -19,7 +19,7 @@ interface Translation {
   count: number;
 }
 
-const QuranSurahPage = ({ params }: { params: { id: string } }) => {
+const QuranSurahPage = async ({ params }: { params: { id: string } }) => {
   const formattedId = String(parseInt(params.id, 10));
 
   const surahPath = path.join(
