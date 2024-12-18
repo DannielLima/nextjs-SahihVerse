@@ -102,7 +102,7 @@ export default function Home() {
             className="text-lg font-lato mb-6 leading-relaxed"
             initial={{ y: 40, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 1, ease: "easeOut" }}
+            transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
             viewport={{ once: true }}
           >
             Islam is a religion of peace, love, and compassion that inspires
@@ -116,7 +116,7 @@ export default function Home() {
             className="text-lg font-lato leading-relaxed"
             initial={{ y: 40, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 1.5, ease: "easeOut" }}
+            transition={{ duration: 1, delay: 1, ease: "easeOut" }}
             viewport={{ once: true }}
           >
             Through its teachings, Islam calls for love for neighbors, care for
@@ -130,7 +130,7 @@ export default function Home() {
           className="md:w-1/2"
           initial={{ x: 100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          transition={{ duration: 1, delay: 1.5, ease: "easeOut" }}
           viewport={{ once: true }}
         >
           <Image
