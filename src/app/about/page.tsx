@@ -8,7 +8,7 @@ const About = () => {
       </h1>
 
       <p className="text-lg sm:text-xl font-normal font-lato text-dark-gray leading-relaxed mb-6">
-        <strong className="font-bold font-lato text-emerald-300">SahihVerse</strong> is a web
+        <strong className="font-bold font-lato text-dark-green">SahihVerse</strong> is a web
         application dedicated to providing an immersive and user-friendly
         experience for exploring Islamic texts. The app focuses on making the
         Quran and Hadiths accessible, with a clean and intuitive interface that
@@ -38,12 +38,14 @@ const About = () => {
         <li>
           <strong>Open Source Project:</strong> SahihVerse is an open-source
           project, available for contributions on{" "}
-          <a
+            <a
             href="https://github.com/DannielLima/SahihVerse"
             className="text-blue-400 hover:text-blue-500 hover:underline"
-          >
+            target="_blank"
+            rel="noopener noreferrer"
+            >
             GitHub
-          </a>
+            </a>
           .
         </li>
       </ul>
@@ -74,6 +76,8 @@ const About = () => {
         <a
           href="https://github.com/DannielLima/SahihVerse"
           className="text-blue-400 hover:text-blue-500 hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           SahihVerse on GitHub
         </a>
