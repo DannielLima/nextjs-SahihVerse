@@ -7,26 +7,35 @@ import { motion } from "framer-motion";
 export default function Home() {
   return (
     <div className="bg-light-beige text-dark-gray">
-      <section className="text-center mt-16 mb-12">
-        <motion.h1
-          className="text-5xl font-bold font-serif mb-4 leading-tight relative"
-          initial={{ y: -100, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
-          Quran <br /> & Hadith
-        </motion.h1>
+      <section className="text-center text-white mt-16 mb-12 relative h-[calc(50vh)] flex items-center justify-center">
+        <Image
+          src="/img/bg-home.jpg"
+          alt="Islam"
+          layout="fill"
+          objectFit="cover"
+          className="absolute inset-0 z-0 w-full h-full opacity-90 rounded-lg"
+        />
+        <div className="relative z-10">
+          <motion.h1
+            className="text-5xl font-bold font-serif mb-4 leading-tight"
+            initial={{ y: -100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            Quran <br /> & Hadith
+          </motion.h1>
 
-        <motion.p
-          className="text-xl font-lato"
-          initial={{ y: -40, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
-          In one place
-        </motion.p>
+          <motion.p
+            className="text-xl font-semibold font-lato"
+            initial={{ y: -40, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            In one place
+          </motion.p>
+        </div>
       </section>
 
       <div className="flex flex-col md:flex-row items-center justify-center md:justify-between mt-12 space-y-10 md:space-y-0 md:space-x-10 px-4">
@@ -134,7 +143,7 @@ export default function Home() {
           viewport={{ once: true }}
         >
           <Image
-            src="/img/muslim.png"
+            src="/img/muslim.jpg"
             alt="Muslim"
             width={500}
             height={500}
