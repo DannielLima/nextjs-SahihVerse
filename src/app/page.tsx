@@ -5,7 +5,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function Home() {
-
   return (
     <div className="bg-light-beige text-dark-gray overflow-hidden">
       <section className="text-center text-white mt-16 mb-12 relative h-[calc(50vh)] flex items-center justify-center">
@@ -19,7 +18,7 @@ export default function Home() {
             src="/img/bg-home.jpg"
             alt="Islam"
             fill
-            style={{ objectFit: 'cover' }}
+            style={{ objectFit: "cover" }}
             className="rounded-lg"
             priority={true}
           />
@@ -65,7 +64,7 @@ export default function Home() {
           />
         </motion.section>
 
-        <div className="w-full md:w-1/2 flex flex-col md:flex-row items-center justify-center md:justify-evenly space-y-8 md:space-y-0">
+        <div className="flex flex-col md:flex-row items-center justify-center md:justify-between mt-12 space-y-10 md:space-y-0 md:space-x-10 px-4">
           <motion.section
             className="flex flex-col items-center text-center space-y-4"
             initial={{ opacity: 0 }}
@@ -84,7 +83,7 @@ export default function Home() {
               Embrace the wisdom of the Quran, the word of Allah.
             </p>
             <Link href="/quran" legacyBehavior>
-              <a className="mt-4 px-6 py-3 text-dark-gray font-semibold font-nunito bg-green-200 rounded-md shadow hover:bg-green-200 transition transform hover:scale-105">
+              <a className="mt-4 px-6 py-3 text-dark-gray font-semibold font-serif hover:text-dark-green transition transform hover:scale-105">
                 Read Quran
               </a>
             </Link>
@@ -108,7 +107,7 @@ export default function Home() {
               Seek knowledge from the sayings of the Prophet (PBUH).
             </p>
             <Link href="/hadith" legacyBehavior>
-              <a className="mt-4 px-6 py-3 text-dark-gray font-semibold font-nunito bg-green-200 rounded-md shadow hover:bg-green-200 transition transform hover:scale-105">
+              <a className="mt-4 px-6 py-3 text-dark-gray font-semibold font-serif hover:text-dark-green rounded-md transition transform hover:scale-105">
                 Read Hadith
               </a>
             </Link>
@@ -171,6 +170,67 @@ export default function Home() {
           />
         </motion.section>
       </div>
+      <footer className="relative bg-light-beige text-white py-12 mt-20">
+        <motion.div
+          className="absolute inset-0 z-0 w-full h-full pointer-events-none"
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 3, ease: "easeInOut" }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <div className="rounded-lg absolute inset-0 bg-black opacity-35 z-10"></div>
+          <Image
+            src="/img/people.jpg"
+            alt="People"
+            fill
+            style={{ objectFit: "cover" }}
+            className="rounded-lg pointer-events-none"
+            priority={true}
+          />
+        </motion.div>
+        <div className="relative z-10 container mx-auto px-6 flex flex-col items-center text-center space-y-6">
+          <motion.div
+            className="flex justify-center space-x-6 mt-6"
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1, duration: 1.3 }}
+            whileInView={{ opacity: 1, y: 0 }}
+          >
+            <Link
+              href="https://github.com/DannielLima/SahihVerse"
+              className="text-lg font-extrabold font-serif text-white hover:text-dark-green transition"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Github
+            </Link>
+            <Link
+              href="https://github.com/semarketir/quranjson"
+              className="text-lg font-extrabold font-serif text-white hover:text-dark-green transition"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Quran API
+            </Link>
+            <Link
+              href="/"
+              className="text-lg font-extrabold font-serif text-white hover:text-dark-green transition"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Hadith API
+            </Link>
+          </motion.div>
+          <motion.div
+            className="flex items-center justify-center space-x-4"
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 2, duration: 1.3 }}
+            whileInView={{ opacity: 1, y: 0 }}
+          ></motion.div>
+        </div>
+      </footer>
     </div>
   );
 }
