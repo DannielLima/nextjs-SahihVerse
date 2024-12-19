@@ -10,7 +10,7 @@ export default function Home() {
     <div className="bg-light-beige text-dark-gray overflow-hidden">
       <section className="text-center text-white mt-16 mb-12 relative h-[calc(50vh)] flex items-center justify-center">
         <motion.div
-          className="absolute inset-0 z-0 w-full h-full"
+          className="absolute inset-0 z-0 w-full h-full pointer-events-none"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
@@ -61,7 +61,7 @@ export default function Home() {
             alt="Quran-Manuscript"
             width={500}
             height={500}
-            className="rounded-lg shadow-lg max-w-full"
+            className="rounded-lg shadow-lg max-w-full pointer-events-none"
           />
         </motion.section>
 
@@ -78,7 +78,7 @@ export default function Home() {
               alt="Quran"
               width={100}
               height={100}
-              className="shadow-md rounded-md"
+              className="shadow-md rounded-md pointer-events-none"
             />
             <p className="text-lg text-dark-gray mt-2">
               Embrace the wisdom of the Quran, the word of Allah.
@@ -102,7 +102,7 @@ export default function Home() {
               alt="Hadith"
               width={125}
               height={125}
-              className="rounded-md"
+              className="rounded-md pointer-events-none"
             />
             <p className="text-lg text-dark-gray mt-2">
               Seek knowledge from the sayings of the Prophet (PBUH).
@@ -167,7 +167,7 @@ export default function Home() {
             alt="Muslim"
             width={500}
             height={500}
-            className="rounded-lg shadow-lg w-full"
+            className="rounded-lg shadow-lg w-full pointer-events-none"
           />
         </motion.section>
       </div>
