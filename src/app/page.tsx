@@ -5,16 +5,26 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function Home() {
+
   return (
     <div className="bg-light-beige text-dark-gray overflow-hidden">
       <section className="text-center text-white mt-16 mb-12 relative h-[calc(50vh)] flex items-center justify-center">
-        <Image
-          src="/img/bg-home.jpg"
-          alt="Islam"
-          layout="fill"
-          objectFit="cover"
-          className="absolute inset-0 z-0 w-full h-full opacity-90 rounded-lg"
-        />
+        <motion.div
+          className="absolute inset-0 z-0 w-full h-full"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <Image
+            src="/img/bg-home.jpg"
+            alt="Islam"
+            fill
+            style={{ objectFit: 'cover' }}
+            className="rounded-lg"
+            priority={true}
+          />
+        </motion.div>
+
         <div className="relative z-10">
           <motion.h1
             className="text-5xl font-bold font-serif mb-4 leading-tight"

@@ -22,20 +22,18 @@ interface Translation {
 }
 
 interface Params {
-  params: Promise<{ id: string }>; // Promessa como parâmetro
+  params: Promise<{ id: string }>;
 }
 
-// Função para gerar parâmetros dinâmicos
 export async function generateStaticParams() {
   const surahDir = path.join(process.cwd(), "src/app/quran/source/surah");
   const surahFiles = await fs.readdir(surahDir);
 
   return surahFiles.map((file) => ({
-    id: file.match(/\d+/)?.[0] || "1", // Extrai o ID do nome do arquivo
+    id: file.match(/\d+/)?.[0] || "1",
   }));
 }
 
-// Função assíncrona para obter os dados
 async function getSurahAndTranslation(id: string) {
   const formattedId = String(parseInt(id, 10));
 
@@ -59,10 +57,9 @@ async function getSurahAndTranslation(id: string) {
   return { surahData, translationData };
 }
 
-// Componente da página
 export default function QuranSurahPage({ params }: Params) {
-  const { id } = use(params); // Aguarda os parâmetros
-  const { surahData, translationData } = use(getSurahAndTranslation(id)); // Aguarda os dados
+  const { id } = use(params);
+  const { surahData, translationData } = use(getSurahAndTranslation(id));
 
   return (
     <div className="min-h-screen text-dark-gray p-6">
