@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <div className="bg-light-beige text-dark-gray">
+    <div className="bg-light-beige text-dark-gray overflow-hidden">
       <section className="text-center text-white mt-16 mb-12 relative h-[calc(50vh)] flex items-center justify-center">
         <Image
           src="/img/bg-home.jpg"
@@ -47,8 +47,8 @@ export default function Home() {
           viewport={{ once: true }}
         >
           <Image
-            src="/img/mosque.png"
-            alt="Mosque"
+            src="/img/quran-manuscript.jpg"
+            alt="Quran-Manuscript"
             width={500}
             height={500}
             className="rounded-lg shadow-lg max-w-full"
@@ -63,13 +63,18 @@ export default function Home() {
             transition={{ delay: 0.5, duration: 1 }}
             viewport={{ once: true }}
           >
-            <div className="bg-emerald-300 p-4 rounded-full flex items-center justify-center shadow-md">
-              <p className="w-32 h-32 text-white font-arabic flex items-center justify-center text-2xl">
-                قُرْءان
-              </p>
-            </div>
+            <Image
+              src="/img/quran.jpg"
+              alt="Quran"
+              width={100}
+              height={100}
+              className="shadow-md rounded-md"
+            />
+            <p className="text-lg text-dark-gray mt-2">
+              Embrace the wisdom of the Quran, the word of Allah.
+            </p>
             <Link href="/quran" legacyBehavior>
-              <a className="mt-2 px-6 py-3 text-dark-gray font-semibold font-nunito bg-emerald-200 rounded-md shadow hover:bg-emerald-300 transition">
+              <a className="mt-4 px-6 py-3 text-dark-gray font-semibold font-nunito bg-green-200 rounded-md shadow hover:bg-green-200 transition transform hover:scale-105">
                 Read Quran
               </a>
             </Link>
@@ -82,13 +87,18 @@ export default function Home() {
             transition={{ delay: 0.75, duration: 1 }}
             viewport={{ once: true }}
           >
-            <div className="bg-rose-300 p-4 rounded-full flex items-center justify-center shadow-md">
-              <p className="w-32 h-32 text-white font-arabic flex items-center justify-center text-2xl">
-                مُحَمَّد
-              </p>
-            </div>
+            <Image
+              src="/img/hadith.png"
+              alt="Hadith"
+              width={125}
+              height={125}
+              className="rounded-md"
+            />
+            <p className="text-lg text-dark-gray mt-2">
+              Seek knowledge from the sayings of the Prophet (PBUH).
+            </p>
             <Link href="/hadith" legacyBehavior>
-              <a className="mt-2 px-6 py-3 text-dark-gray font-semibold font-nunito bg-rose-200 rounded-md shadow hover:bg-rose-300 transition">
+              <a className="mt-4 px-6 py-3 text-dark-gray font-semibold font-nunito bg-green-200 rounded-md shadow hover:bg-green-200 transition transform hover:scale-105">
                 Read Hadith
               </a>
             </Link>
