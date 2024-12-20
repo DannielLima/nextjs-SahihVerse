@@ -87,6 +87,7 @@ export default function Home() {
                 Read Quran
               </a>
             </Link>
+            <div className="w-16 h-1 bg-gradient-to-r from-dark-gray via-gray-500 to-dark-gray mt-2 rounded-full"></div>
           </motion.section>
 
           <motion.section
@@ -111,6 +112,7 @@ export default function Home() {
                 Read Hadith
               </a>
             </Link>
+            <div className="w-16 h-1 bg-gradient-to-r from-dark-gray via-gray-500 to-dark-gray mt-2 rounded-full"></div>
           </motion.section>
         </div>
       </div>
@@ -175,7 +177,7 @@ export default function Home() {
           className="absolute inset-0 z-0 w-full h-full pointer-events-none"
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 3, ease: "easeInOut" }}
+          transition={{ duration: 2, ease: "easeInOut" }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
@@ -194,7 +196,7 @@ export default function Home() {
             className="flex justify-center space-x-6 mt-6"
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 1.3 }}
+            transition={{ delay: 0.5, duration: 1.5, ease: "easeInOut" }}
             whileInView={{ opacity: 1, y: 0 }}
           >
             <Link
@@ -226,7 +228,7 @@ export default function Home() {
             className="flex items-center justify-center space-x-4"
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 2, duration: 1.3 }}
+            transition={{ delay: 1, duration: 1.5, ease: "easeInOut" }}
             whileInView={{ opacity: 1, y: 0 }}
           ></motion.div>
         </div>
