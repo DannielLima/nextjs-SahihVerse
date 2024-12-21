@@ -1,5 +1,5 @@
 
-# SahihVerse 🌙
+# SahihVerse
 
 **SahihVerse** is a web application dedicated to providing an immersive and user-friendly experience for exploring Islamic texts. The project focuses on making the Quran and Hadiths accessible through a clean and intuitive interface, offering translations in Arabic and English.
 ## 📖 Overview
