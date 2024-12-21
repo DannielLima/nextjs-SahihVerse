@@ -83,11 +83,11 @@ export default function Home() {
               Embrace the wisdom of the Quran, the word of Allah.
             </p>
             <Link href="/quran" legacyBehavior>
-              <a className="mt-4 px-6 py-3 text-dark-gray font-semibold font-serif hover:text-dark-green transition transform hover:scale-105">
+              <a className="mt-4 px-6 py-3 text-dark-gray font-semibold font-serif hover:text-dark-green rounded-md transition transform hover:scale-105 flex flex-col items-center">
                 Read Quran
+                <span className="block w-16 h-1 mt-2 bg-gradient-to-r from-dark-gray via-gray-500 to-dark-gray rounded-full pointer-events-none"></span>
               </a>
             </Link>
-            <div className="w-16 h-1 bg-gradient-to-r from-dark-gray via-gray-500 to-dark-gray mt-2 rounded-full"></div>
           </motion.section>
 
           <motion.section
@@ -108,11 +108,11 @@ export default function Home() {
               Seek knowledge from the sayings of the Prophet (PBUH).
             </p>
             <Link href="/hadith" legacyBehavior>
-              <a className="mt-4 px-6 py-3 text-dark-gray font-semibold font-serif hover:text-dark-green rounded-md transition transform hover:scale-105">
+              <a className="mt-4 px-6 py-3 text-dark-gray font-semibold font-serif hover:text-dark-green rounded-md transition transform hover:scale-105 flex flex-col items-center">
                 Read Hadith
+                <span className="block w-16 h-1 mt-2 bg-gradient-to-r from-dark-gray via-gray-500 to-dark-gray rounded-full pointer-events-none"></span>
               </a>
             </Link>
-            <div className="w-16 h-1 bg-gradient-to-r from-dark-gray via-gray-500 to-dark-gray mt-2 rounded-full"></div>
           </motion.section>
         </div>
       </div>
