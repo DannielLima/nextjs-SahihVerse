@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@media (max-width: 768px) {
+  a:hover,
+  .hover\:text-dark-green:hover,
+  .hover\:scale-105:hover {
+    transform: none !important;
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+}
