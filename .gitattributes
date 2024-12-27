@@ -1,0 +1,84 @@
+*.html linguist-language=HTML
+*.htm linguist-language=HTML
+*.css linguist-language=CSS
+*.scss linguist-language=SCSS
+*.less linguist-language=Less
+*.js linguist-language=JavaScript
+*.jsx linguist-language=JavaScript
+*.ts linguist-language=TypeScript
+*.tsx linguist-language=TypeScript
+*.json linguist-language=JSON
+*.xml linguist-language=XML
+*.yaml linguist-language=YAML
+*.yml linguist-language=YAML
+
+*.php linguist-language=PHP
+*.py linguist-language=Python
+*.rb linguist-language=Ruby
+*.java linguist-language=Java
+*.c linguist-language=C
+*.cpp linguist-language=C++
+*.cs linguist-language=C#
+*.go linguist-language=Go
+*.rs linguist-language=Rust
+*.swift linguist-language=Swift
+
+*.sh linguist-language=Shell
+*.bash linguist-language=Shell
+*.zsh linguist-language=Shell
+*.bat linguist-language=Batchfile
+*.ps1 linguist-language=PowerShell
+
+*.env linguist-language=Shell
+*.ini linguist-language=INI
+*.toml linguist-language=TOML
+*.config linguist-language=XML
+
+*.ejs linguist-language=EJS
+*.hbs linguist-language=Handlebars
+*.pug linguist-language=Pug
+*.twig linguist-language=Twig
+
+*.md linguist-language=Markdown
+*.markdown linguist-language=Markdown
+*.rst linguist-language=ReStructuredText
+*.txt linguist-language=Text
+
+*.sql linguist-language=SQL
+*.db linguist-language=SQL
+
+*.svg linguist-language=SVG
+*.png linguist-language=Binary
+*.jpg linguist-language=Binary
+*.jpeg linguist-language=Binary
+*.gif linguist-language=Binary
+*.ico linguist-language=Binary
+*.webp linguist-language=Binary
+
+*.vue linguist-language=Vue
+*.svelte linguist-language=Svelte
+*.elm linguist-language=Elm
+*.dart linguist-language=Dart
+*.rkt linguist-language=Racket
+
+*.log linguist-language=Text
+*.csv linguist-language=CSV
+*.tsv linguist-language=TSV
+*.dat linguist-language=Binary
+*.pdf linguist-language=Binary
+*.doc linguist-language=Binary
+*.docx linguist-language=Binary
+*.odt linguist-language=Binary
+*.zip linguist-language=Binary
+*.tar linguist-language=Binary
+*.gz linguist-language=Binary
+*.rar linguist-language=Binary
+
+*.min.js linguist-vendored
+*.min.css linguist-vendored
+*.lock linguist-vendored
+node_modules/* linguist-vendored
+vendor/* linguist-vendored
+dist/* linguist-vendored
+build/* linguist-vendored
+*.map linguist-vendored
