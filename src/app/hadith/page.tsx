@@ -31,10 +31,16 @@ interface Hadith {
   text: string;
 }
 
+interface Section {
+  [key: string]: string;
+}
+
 const HadithPage = () => {
   const [editions, setEditions] = useState<Edition[]>([]);
   const [selectedEdition, setSelectedEdition] = useState<string | null>(null);
   const [hadiths, setHadiths] = useState<Hadith[]>([]);
+  const [sections, setSections] = useState<Section | null>(null);
+  const [selectedSection, setSelectedSection] = useState<number | null>(null);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -65,14 +71,22 @@ const HadithPage = () => {
     fetchEditions();
   }, []);
 
-  const fetchHadiths = async (editionId: string) => {
+  const fetchHadiths = async (editionId: string, sectionNo?: number) => {
     setLoading(true);
     setSelectedEdition(editionId);
+    setSelectedSection(sectionNo || null);
+
     try {
+      const sectionPart = sectionNo ? `/sections/${sectionNo}` : "";
       const res = await fetch(
-        `https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/${editionId}.min.json`
+        `https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/${editionId}${sectionPart}.json`
       );
       const data = await res.json();
+
+      if (data.metadata?.sections) {
+        setSections(data.metadata.sections);
+      }
+
       setHadiths(data.hadiths || []);
     } catch (error) {
       console.error("Error fetching hadiths:", error);
@@ -109,22 +123,31 @@ const HadithPage = () => {
             Back to Editions
           </button>
           <h2 className="text-2xl font-bold mb-4 text-center">
-            {editions.find(edition => edition.name === selectedEdition)?.mainName || "Unknown"}
+            {editions.find((edition) => edition.name === selectedEdition)?.mainName || "Unknown"}
           </h2>
+
+          {sections && (
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-6">
+              {Object.entries(sections).map(([sectionNo, sectionName]) => (
+                <button
+                  key={sectionNo}
+                  onClick={() => fetchHadiths(selectedEdition!, parseInt(sectionNo))}
+                  className="bg-light-beige border-2 border-dark-green p-4 rounded-lg shadow-md text-center hover:bg-pastel-green transition-all"
+                >
+                  <p className="text-xl font-semibold">{sectionName}</p>
+                </button>
+              ))}
+            </div>
+          )}
+
           {loading ? (
             <p className="text-center text-gray-600">Loading...</p>
           ) : (
             <div className="space-y-4">
               {hadiths.map((hadith, index) => (
-            <div
-              key={`${hadith.hadithNumber}-${index}`}
-              className="p-6 border rounded-lg"
-            >
-              {/* <p className="font-semibold mb-2 text-lg text-dark-green">
-                Hadith #{hadith.hadithNumber}
-              </p> */}
-              <p className="text-gray-700 leading-relaxed">{hadith.text}</p>
-            </div>
+                <div key={`${hadith.hadithNumber}-${index}`} className="p-6 border rounded-lg">
+                  <p className="text-gray-700 leading-relaxed">{hadith.text}</p>
+                </div>
               ))}
             </div>
           )}
