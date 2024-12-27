@@ -40,7 +40,6 @@ const HadithPage = () => {
   const [selectedEdition, setSelectedEdition] = useState<string | null>(null);
   const [hadiths, setHadiths] = useState<Hadith[]>([]);
   const [sections, setSections] = useState<Section | null>(null);
-  const [selectedSection, setSelectedSection] = useState<number | null>(null);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -74,8 +73,6 @@ const HadithPage = () => {
   const fetchHadiths = async (editionId: string, sectionNo?: number) => {
     setLoading(true);
     setSelectedEdition(editionId);
-    setSelectedSection(sectionNo || null);
-
     try {
       const sectionPart = sectionNo ? `/sections/${sectionNo}` : "";
       const res = await fetch(
