@@ -34,7 +34,7 @@ const SectionsPage = () => {
 
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-4">Sections</h1>
+      <h1 className="text-4xl font-bold font-serif mb-6 text-center md:text-5xl">Sections</h1>
       {loading ? (
         <p>Loading...</p>
       ) : sections ? (
@@ -45,7 +45,7 @@ const SectionsPage = () => {
               <Link
                 href={`/hadith/${id}/${sectionId.replace(/\s+/g, "")}`}
                 key={sectionId}
-                className="p-4 border rounded hover:shadow-lg"
+                className="bg-light-beige border-2 border-dark-green p-6 rounded-lg text-center shadow-lg hover:bg-pastel-green transition-transform transform"
               >
                 <h2>{sectionName}</h2>
               </Link>

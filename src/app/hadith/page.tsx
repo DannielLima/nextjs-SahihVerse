@@ -45,18 +45,20 @@ const HadithPage = () => {
 
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-4">Hadith Books</h1>
+      <h1 className="text-4xl font-bold font-serif mb-6 text-center md:text-5xl">
+        Books
+      </h1>
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {editions.map((edition) => (
             <Link
               href={`/hadith/${edition.name}`}
               key={edition.name}
-              className="p-4 border rounded hover:shadow-lg"
+              className="bg-light-beige border-2 border-dark-green p-6 rounded-lg text-center shadow-lg hover:bg-pastel-green transition-transform transform"
             >
-              <h2 className="font-semibold">{edition.mainName}</h2>
+              <h2 className="font-semibold text-lg">{edition.mainName}</h2>
             </Link>
           ))}
         </div>
