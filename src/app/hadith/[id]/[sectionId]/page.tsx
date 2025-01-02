@@ -40,13 +40,18 @@ const HadithsPage = () => {
 
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-4xl font-bold font-serif mb-6 text-center md:text-5xl">Hadiths</h1>
+      <h1 className="text-4xl font-bold font-serif mb-6 text-center md:text-5xl">
+        Hadiths
+      </h1>
       {loading ? (
         <p>Loading...</p>
       ) : hadiths.length > 0 ? (
         <div className="space-y-4">
-          {hadiths.map((hadith) => (
-            <div key={hadith.hadithNumber} className="p-4 border rounded">
+          {hadiths.map((hadith, index) => (
+            <div
+              key={`${hadith.hadithNumber}-${index}`}
+              className="p-4 border rounded"
+            >
               <h2 className="font-semibold">{hadith.hadithNumber}</h2>
               <p>{hadith.text}</p>
             </div>
