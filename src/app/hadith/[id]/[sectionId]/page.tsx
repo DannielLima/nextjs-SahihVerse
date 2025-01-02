@@ -13,31 +13,50 @@ const fetchHadiths = async (
   id: string,
   sectionId: string
 ): Promise<Hadith[]> => {
-  const res = await fetch(
-    `https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/${id}/sections/${sectionId}.json`
-  );
-  const data = await res.json();
-  return (data.hadiths || []).filter(
-    (hadith: Hadith) => hadith.text.trim().length > 0
-  );
+  try {
+    const response = await fetch(
+      `https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/${id}/sections/${sectionId}.json`
+    );
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch hadiths.");
+    }
+
+    const data = await response.json();
+    return (data.hadiths || []).filter(
+      (hadith: Hadith) => hadith.text.trim().length > 0
+    );
+  } catch (error) {
+    console.error("Error fetching hadiths:", error);
+    return [];
+  }
 };
 
-const HadithsPage = () => {
+const HadithCard: React.FC<{ hadith: Hadith }> = ({ hadith }) => (
+  <div className="p-4 border rounded shadow-sm hover:shadow-md transition-shadow">
+    <h2 className="font-semibold text-lg mb-2">{hadith.hadithNumber}</h2>
+    <p>{hadith.text}</p>
+  </div>
+);
+
+const HadithsPage: React.FC = () => {
   const params = useParams();
   const id = params.id as string;
   const sectionId = (params.sectionId as string).replace(/\s+/g, "");
   const [hadiths, setHadiths] = useState<Hadith[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const loadHadiths = async () => {
-      const delay = setTimeout(() => {
-        setLoading(true);
-      }, 1000);
+      setLoading(true);
+      setError(null);
 
       const data = await fetchHadiths(id, sectionId);
+      if (data.length === 0) {
+        setError("No hadiths found.");
+      }
       setHadiths(data);
-      clearTimeout(delay);
       setLoading(false);
     };
 
@@ -51,20 +70,17 @@ const HadithsPage = () => {
       </h1>
       {loading ? (
         <Loading />
-      ) : hadiths.length > 0 ? (
+      ) : error ? (
+        <p className="text-center text-red-500">{error}</p>
+      ) : (
         <div className="space-y-4">
           {hadiths.map((hadith, index) => (
-            <div
+            <HadithCard
               key={`${hadith.hadithNumber}-${index}`}
-              className="p-4 border rounded"
-            >
-              <h2 className="font-semibold">{hadith.hadithNumber}</h2>
-              <p>{hadith.text}</p>
-            </div>
+              hadith={hadith}
+            />
           ))}
         </div>
-      ) : (
-        <p>No hadiths found.</p>
       )}
     </div>
   );
