@@ -1,5 +1,6 @@
 "use client";
 
+import Loading from "@/components/ui/Loading";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
@@ -26,15 +27,20 @@ const HadithsPage = () => {
   const id = params.id as string;
   const sectionId = (params.sectionId as string).replace(/\s+/g, "");
   const [hadiths, setHadiths] = useState<Hadith[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const loadHadiths = async () => {
-      setLoading(true);
+      const delay = setTimeout(() => {
+        setLoading(true);
+      }, 1000);
+
       const data = await fetchHadiths(id, sectionId);
       setHadiths(data);
+      clearTimeout(delay);
       setLoading(false);
     };
+
     loadHadiths();
   }, [id, sectionId]);
 
@@ -44,7 +50,7 @@ const HadithsPage = () => {
         Hadiths
       </h1>
       {loading ? (
-        <p>Loading...</p>
+        <Loading />
       ) : hadiths.length > 0 ? (
         <div className="space-y-4">
           {hadiths.map((hadith, index) => (

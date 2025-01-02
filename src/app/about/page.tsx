@@ -1,6 +1,23 @@
-import React from "react";
+"use client";
+
+import Loading from "@/components/ui/Loading";
+import React, { useState, useEffect } from "react";
 
 const About = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
     <div className="container mx-auto p-8 bg-light-beige text-white rounded-xl">
       <h1 className="text-4xl sm:text-5xl font-bold font-serif text-center text-dark-gray mb-8">
