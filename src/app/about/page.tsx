@@ -56,7 +56,7 @@ const About = () => {
           <strong>Open Source Project:</strong> SahihVerse is an open-source
           project, available for contributions on{" "}
           <a
-            href="https://github.com/DannielLima/SahihVerse"
+            href="https://github.com/DannielLima/nextjs-SahihVerse"
             className="text-blue-400 hover:text-blue-500 hover:underline"
             target="_blank"
             rel="noopener noreferrer"
@@ -91,7 +91,7 @@ const About = () => {
       <p className="text-lg sm:text-xl font-normal font-lato text-dark-gray leading-relaxed mb-6">
         You can access the source code for this project on GitHub:{" "}
         <a
-          href="https://github.com/DannielLima/SahihVerse"
+          href="https://github.com/DannielLima/nextjs-SahihVerse"
           className="text-blue-400 hover:text-blue-500 hover:underline"
           target="_blank"
           rel="noopener noreferrer"
