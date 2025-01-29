@@ -9,7 +9,7 @@ const About = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, []);
@@ -20,44 +20,39 @@ const About = () => {
 
   return (
     <div className="container mx-auto p-8 bg-light-beige text-white rounded-xl">
-      <h1 className="text-4xl sm:text-5xl font-bold font-serif text-center text-dark-gray mb-8">
+      <h1 className="text-5xl font-bold font-serif text-center text-dark-gray mb-10">
         About SahihVerse
       </h1>
 
-      <p className="text-lg sm:text-xl font-normal font-lato text-dark-gray leading-relaxed mb-6">
-        <strong className="font-bold font-lato text-dark-green">
-          SahihVerse
-        </strong>{" "}
-        is a web application dedicated to providing an immersive and
-        user-friendly experience for exploring Islamic texts. The app focuses on
-        making the Quran and Hadiths accessible, with a clean and intuitive
-        interface that offers translations in Arabic and English.
+      <p className="text-lg sm:text-xl font-light font-lato text-dark-gray leading-relaxed mb-8">
+        <strong className="font-semibold text-dark-green">SahihVerse</strong> is
+        a web application dedicated to providing an immersive and user-friendly
+        experience for exploring Islamic texts. The app focuses on making the
+        Quran and Hadiths accessible, with a clean and intuitive interface that
+        offers translations in Arabic and English.
       </p>
 
-      <h2 className="text-2xl sm:text-3xl font-bold font-serif text-dark-gray mb-4">
+      <h2 className="text-3xl font-bold font-serif text-dark-gray mb-6">
         Key Features:
       </h2>
-      <ul className="list-disc pl-6 space-y-4 text-dark-gray">
+      <ul className="list-disc pl-6 space-y-4 text-dark-gray text-lg">
         <li>
-          <strong>Chapters of the Quran:</strong> The app offers easy navigation
-          through all the chapters of the Quran, with each Surah displayed in
-          Arabic, English. Click on any Surah to explore its verses in detail.
+          <strong>Chapters of the Quran:</strong> Easily navigate all Surahs,
+          available in Arabic and English.
         </li>
         <li>
-          <strong>Collection of Hadiths:</strong> A section dedicated to
-          Hadiths, with authentic sayings of the Prophet Muhammad (PBUH),
-          organized for easy exploration.
+          <strong>Collection of Hadiths:</strong> Explore authentic sayings of
+          Prophet Muhammad (PBUH), categorized for easy access.
         </li>
         <li>
-          <strong>Responsive Design:</strong> Fully optimized for mobile and
-          desktop devices, ensuring a smooth user experience on any screen size.
+          <strong>Responsive Design:</strong> Optimized for mobile and desktop,
+          ensuring a seamless experience.
         </li>
         <li>
-          <strong>Open Source Project:</strong> SahihVerse is an open-source
-          project, available for contributions on{" "}
+          <strong>Open Source Project:</strong> Contribute on{" "}
           <a
             href="https://github.com/DannielLima/nextjs-SahihVerse"
-            className="text-blue-400 hover:text-blue-500 hover:underline"
+            className="text-blue-500 hover:text-blue-600 underline"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -67,32 +62,31 @@ const About = () => {
         </li>
       </ul>
 
-      <h2 className="text-2xl sm:text-3xl font-bold font-serif text-dark-gray mt-6 mb-4">
+      <h2 className="text-3xl font-bold font-serif text-dark-gray mt-8 mb-6">
         Technologies Used:
       </h2>
-      <ul className="list-disc pl-6 space-y-4 text-dark-gray">
+      <ul className="list-disc pl-6 space-y-4 text-dark-gray text-lg">
         <li>
-          <strong>Next.js:</strong> A React-based framework for building fast
-          and scalable web applications.
+          <strong>Next.js:</strong> Fast and scalable React-based framework.
         </li>
         <li>
-          <strong>Tailwind CSS:</strong> A utility-first CSS framework for fast,
-          customizable styling.
+          <strong>Tailwind CSS:</strong> Utility-first styling for quick
+          customization.
         </li>
         <li>
-          <strong>TypeScript:</strong> A statically typed superset of JavaScript
-          for a better development experience and fewer errors.
+          <strong>TypeScript:</strong> Ensures better development experience and
+          fewer errors.
         </li>
       </ul>
 
-      <h2 className="text-2xl sm:text-3xl font-bold font-serif text-dark-gray mt-6 mb-4">
+      <h2 className="text-3xl font-bold font-serif text-dark-gray mt-8 mb-6">
         Project Repository:
       </h2>
-      <p className="text-lg sm:text-xl font-normal font-lato text-dark-gray leading-relaxed mb-6">
-        You can access the source code for this project on GitHub:{" "}
+      <p className="text-lg font-light text-dark-gray leading-relaxed">
+        Access the source code on GitHub:{" "}
         <a
           href="https://github.com/DannielLima/nextjs-SahihVerse"
-          className="text-blue-400 hover:text-blue-500 hover:underline"
+          className="text-blue-500 hover:text-blue-600 underline"
           target="_blank"
           rel="noopener noreferrer"
         >
