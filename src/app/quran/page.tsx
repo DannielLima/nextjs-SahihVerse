@@ -52,6 +52,7 @@ export default function Home() {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           className="w-full px-4 py-3 border-2 border-gray-400 rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 text-lg text-gray-700"
+          aria-label="Search for a Surah"
         />
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -69,14 +70,16 @@ export default function Home() {
         </svg>
       </div>
       {filteredSurahs.length === 0 ? (
-        <p className="text-center text-gray-600 text-xl">No results found.</p>
+        <p className="text-center text-gray-600 text-xl" aria-live="polite">
+          No results found.
+        </p>
       ) : (
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
           {filteredSurahs.map((surah) => (
             <Link
               href={`/quran/${surah.index}`}
               key={surah.index}
-              className="bg-light-beige border-2 border-dark-green p-4 rounded-lg text-center shadow-md hover:bg-pastel-green transition-all"
+              className="bg-light-beige border-2 border-dark-green p-4 rounded-lg text-center shadow-md hover:bg-pastel-green transition-all transform hover:scale-105"
             >
               <div>
                 <p className="text-xl font-semibold text-dark-gray mb-2">
