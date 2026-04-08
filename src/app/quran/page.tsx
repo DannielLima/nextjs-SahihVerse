@@ -77,7 +77,7 @@ export default function QuranHome() {
             animate={{ opacity: 1 }}
             className="text-center text-stone-500 text-xl py-20 bg-[#1A1D24]/30 rounded-3xl border border-dashed border-white/10"
           >
-            No cosmic match found for "{searchQuery}"
+            No cosmic match found for &quot;{searchQuery}&quot;
           </motion.p>
         ) : (
           <motion.div

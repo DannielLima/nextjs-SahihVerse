@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Github, Code2, Cpu, Globe2, Sparkles, Layout } from "lucide-react";
+import { LucideIcon } from "lucide-react";
 import Loading from "@/components/ui/Loading";
 
 const FeatureCard = ({
@@ -10,7 +11,7 @@ const FeatureCard = ({
   title,
   desc,
 }: {
-  icon: any;
+  icon: LucideIcon;
   title: string;
   desc: string;
 }) => (

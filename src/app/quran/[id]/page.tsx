@@ -2,7 +2,6 @@ import { use } from "react";
 import path from "path";
 import fs from "fs/promises";
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 interface Verse {
   [key: string]: string;

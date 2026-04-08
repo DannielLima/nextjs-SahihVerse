@@ -211,7 +211,7 @@ export default function Home() {
                 justice, and mercy to all living beings.
               </p>
               <p className="border-l-4 border-[#00E676]/30 pl-6 italic">
-                The word "Islam" itself means submission to God's will,
+                The word &quot;Islam&quot; itself means submission to God's will,
                 reflecting a way of life that encourages harmony, mutual
                 respect, and understanding.
               </p>
